@@ -1,6 +1,3 @@
-[submodule "compiladores"]
-	path = compiladores
-	url = https://github.com/thiago-henrique-leite/compiladores
 [submodule "proj-oo/design-pattern-java"]
 	path = proj-oo/design-pattern-java
 	url = https://github.com/thiago-henrique-leite/design-pattern-java
