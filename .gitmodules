@@ -1,0 +1,3 @@
+[submodule "compiladores"]
+	path = compiladores
+	url = https://github.com/thiago-henrique-leite/compiladores
