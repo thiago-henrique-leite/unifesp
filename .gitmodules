@@ -7,3 +7,6 @@
 [submodule "pcd/jogo-da-vida"]
 	path = pcd/jogo-da-vida
 	url = https://github.com/thiago-henrique-leite/jogo-da-vida
+[submodule "engenharia-de-software/web-medical-clinic"]
+	path = engenharia-de-software/web-medical-clinic
+	url = https://github.com/thiago-henrique-leite/web-medical-clinic
