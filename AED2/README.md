@@ -9,8 +9,8 @@ busca e indexação de dados, e no desenvolvimento de algoritmos eficientes.
   * [Árvore Binária de Busca](data-structure/trees/abb)
   * [Árvore AVL](data-structure/trees/avl)
   * [Árvore Rubro Negra](data-structure/trees/red-black)
-  * [Hash por Encadeamento](data-structure/Hashing/chaining)
-  * [Hash por Endereçamento Aberto](data-structure/Hashing/open-addressing)
+  * [Hash por Encadeamento](data-structure/hashing/chaining)
+  * [Hash por Endereçamento Aberto](data-structure/hashing/open-addressing)
 
 
 ## *Métodos de Ordenação Interna em C*
