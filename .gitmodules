@@ -7,3 +7,6 @@
 [submodule "engenharia-de-software/web-medical-clinic"]
 	path = engenharia-de-software/web-medical-clinic
 	url = https://github.com/thiago-henrique-leite/web-medical-clinic
+[submodule "compiladores/compilador-c-minus"]
+	path = compiladores/compilador-c-minus
+	url = https://github.com/thiago-henrique-leite/compilador-c-minus
