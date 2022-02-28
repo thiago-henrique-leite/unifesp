@@ -1,7 +1,6 @@
+[submodule "c-minus-compiler"]
+	path = c-minus-compiler
+	url = https://github.com/thiago-henrique-leite/c-minus-compiler
 [submodule "Web-Medical-Clinic"]
 	path = web-medical-clinic
 	url = https://github.com/thiago-henrique-leite/web-medical-clinic.git
-
-[submodule "compiladores"]
-	path = compiladores
-	url = https://github.com/thiago-henrique-leite/c-minus-compiler
