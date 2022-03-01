@@ -1,0 +1,12 @@
+$TTL	60000
+@	IN	SOA	dns.unifesp.br. admin.dns.unifesp.br(
+	1234	; serial id
+	30	; refresh
+	15	; retry
+	60000	;
+	0
+)
+@		IN	NS	dns.unifesp.br.
+dns.unifesp.br. IN	A	10.0.1.11
+web		IN	A	10.0.1.10
+www		IN	CNAME	web

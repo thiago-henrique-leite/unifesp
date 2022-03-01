@@ -1,0 +1,13 @@
+$TTL	60000
+@	IN	SOA	dns.br. admin.dns.br. (
+	1234
+	30
+	15
+	60000
+	0
+)
+@	IN	NS	dns.br.
+dns.br. IN	A	10.0.2.10
+
+unifesp.br.	IN	NS	dns.unifesp.br.
+dns.unifesp.br.	IN	A	10.0.1.11
