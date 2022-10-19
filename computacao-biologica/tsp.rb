@@ -1,7 +1,7 @@
 # Traveling Salesman Problem (TSP) using Genetic Algorithm
 class TSP
   GENERARION_SIZE = 50
-  MAX_GENERARIONS = 5000
+  MAX_GENERARIONS = 500
 
   DISTANCES = {
     'AB' => 42,
@@ -64,12 +64,10 @@ class TSP
   attr_reader :crossover_size, :unchanged_size, :mutations_size
 
   def generate_initial_population
-    individual = %w[A B C D E F G H]
+    base_individual = %w[A B C D E F G H]
 
     GENERARION_SIZE.times do
-      individual = individual.shuffle
-
-      @curr_generation << format_individual(individual)
+      @curr_generation << format_individual(base_individual.shuffle)
     end
   end
 
@@ -96,7 +94,7 @@ class TSP
     curr_generation_individuals.shift
     curr_generation_individuals.shift
 
-    reproduce_individuals(curr_generation_individuals)
+    reproduce_individuals(curr_generation_individuals.shuffle)
 
     @curr_generation = next_generation
   end
@@ -118,11 +116,15 @@ class TSP
   def reproduce_individuals(individuals)
     number_of_couples = individuals.size / 2
 
-    number_of_couples.times do |index|
+    index = 0
+
+    number_of_couples.times do
       father = individuals[index]
       mother = individuals[index + 1]
 
       cross(father, mother)
+
+      index += 2
     end
   end
 
