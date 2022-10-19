@@ -1,7 +1,7 @@
 # Traveling Salesman Problem (TSP) using Genetic Algorithm
 class TSP
   GENERARION_SIZE = 50
-  MAX_GENERARIONS = 500
+  MAX_GENERARIONS = 400
 
   DISTANCES = {
     'AB' => 42,
