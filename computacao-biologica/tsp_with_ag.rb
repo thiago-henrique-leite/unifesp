@@ -199,6 +199,8 @@ class TravelingSalesmanProblemWithAG
     mutations_percent = (mutations_size * 100 / cross_size.to_f).round(2)
 
     puts ""
+    puts "Caixeiro Viajante com AG | 8 CIDADES"
+    puts ""
     puts "Resultados após #{generation_index} gerações de #{GENERARION_SIZE} indivíduos!"
     puts ""
     puts "Realizou Crossover..: #{crossover_percent}%"

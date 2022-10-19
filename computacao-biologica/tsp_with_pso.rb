@@ -58,6 +58,7 @@ class TravelingSalesmanProblemWithPSO
     end
 
     bestest_particle
+    print_results
   end
 
   private
@@ -127,6 +128,16 @@ class TravelingSalesmanProblemWithPSO
 
   def rand_index
     rand(0...PARTICLE_SIZE)
+  end
+
+  def print_results
+    puts ""
+    puts "Caixeiro Viajante com PSO | 8 CIDADES"
+    puts ""
+    puts "Resultados após #{ITERATIONS} iterações para #{PARTICLES_SIZE} partículas!"
+    puts ""
+    puts "1º: #{bestest_particle[0]} | Fitness: #{bestest_particle[1]}"
+    puts ""
   end
 end
 
