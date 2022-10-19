@@ -170,8 +170,8 @@ class TSP
   end
 
   def track_metrics
-    st_place = curr_generation[0]
-    nd_place = curr_generation[1]
+    st_place = curr_generation[0].sort
+    nd_place = curr_generation[1].sort
 
     cross_size = crossover_size + unchanged_size + mutations_size
 
