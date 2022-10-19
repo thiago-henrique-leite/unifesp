@@ -36,7 +36,7 @@ class TSP
     'GH' => 59
   }.freeze
 
-  attr_reader :curr_generation, :next_generation, :generation_fitness
+  attr_reader :curr_generation, :next_generation, :generation_fitness, :bestest_individual
 
   def initialize
     @curr_generation = []
@@ -45,6 +45,8 @@ class TSP
     @crossover_size = 0
     @unchanged_size = 0
     @mutations_size = 0
+    @generation_index = 0
+    @generations_with_best_unchanged = 0
   end
 
   def self.perform
@@ -55,7 +57,11 @@ class TSP
     generate_initial_population
 
     MAX_GENERARIONS.times do
+      @generation_index += 1
+
       produce_next_generation
+
+      break if generations_with_best_unchanged >= 100
     end
 
     track_metrics
@@ -63,7 +69,7 @@ class TSP
 
   private
 
-  attr_reader :crossover_size, :unchanged_size, :mutations_size
+  attr_reader :crossover_size, :unchanged_size, :mutations_size, :generation_index, :generations_with_best_unchanged
 
   def generate_initial_population
     base_individual = %w[A B C D E F G H]
@@ -71,6 +77,8 @@ class TSP
     GENERARION_SIZE.times do
       @curr_generation << format_individual(base_individual.shuffle)
     end
+
+    @bestest_individual = curr_generation[0]
   end
 
   def format_individual(individual)
@@ -85,6 +93,8 @@ class TSP
 
     curr_generation_individuals = sort_individuals_by_fitness
 
+    update_bestest_individual(curr_generation_individuals[0])
+
     @next_generation << curr_generation_individuals[0]
     @next_generation << curr_generation_individuals[1]
 
@@ -94,6 +104,18 @@ class TSP
     reproduce_individuals(curr_generation_individuals.shuffle)
 
     @curr_generation = next_generation
+  end
+
+  def update_bestest_individual(candidate)
+    bestest_individual_fitness = fitness(bestest_individual)
+    candidate_fitness = fitness(candidate)
+
+    if candidate_fitness < bestest_individual_fitness
+      @bestest_individual = candidate
+      @generations_with_best_unchanged = 0
+    else
+      @generations_with_best_unchanged += 1
+    end
   end
 
   def sort_individuals_by_fitness
@@ -177,7 +199,7 @@ class TSP
     mutations_percent = (mutations_size * 100 / cross_size.to_f).round(2)
 
     puts ""
-    puts "Resultados após #{MAX_GENERARIONS} gerações de #{GENERARION_SIZE} indivíduos!"
+    puts "Resultados após #{generation_index} gerações de #{GENERARION_SIZE} indivíduos!"
     puts ""
     puts "Realizou Crossover..: #{crossover_percent}%"
     puts "Manteve os Pais.....: #{unchanged_percent}%"
