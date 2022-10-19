@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Traveling Salesman Problem (TSP) using Genetic Algorithm
 class TSP
   GENERARION_SIZE = 50
@@ -72,15 +74,10 @@ class TSP
   end
 
   def format_individual(individual)
-    rotated_individual = rotate_individual(individual)
+    rotated_individual = individual.dup
+    rotated_individual << rotated_individual.shift
 
     individual.zip(rotated_individual).map(&:sort).map(&:join)
-  end
-
-  def rotate_individual(individual)
-    rotated_individual = individual.dup
-
-    rotated_individual << rotated_individual.shift
   end
 
   def produce_next_generation
