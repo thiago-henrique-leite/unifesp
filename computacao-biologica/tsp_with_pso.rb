@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Traveling Salesman Problem (TSP) using PSO
-class PSO
+class TravelingSalesmanProblemWithPSO
   ITERATIONS = 200
   PARTICLE_SIZE = 8
   PARTICLES_SIZE = 50
@@ -130,4 +130,4 @@ class PSO
   end
 end
 
-PSO.perform
+TravelingSalesmanProblemWithPSO.perform

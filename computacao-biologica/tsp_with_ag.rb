@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # Traveling Salesman Problem (TSP) using Genetic Algorithm
-class TSP
+class TravelingSalesmanProblemWithAG
   GENERARION_SIZE = 50
   MAX_GENERARIONS = 400
 
@@ -56,8 +56,8 @@ class TSP
   def perform
     generate_initial_population
 
-    MAX_GENERARIONS.times do
-      @generation_index += 1
+    MAX_GENERARIONS.times do |index|
+      @generation_index = index + 1
 
       produce_next_generation
 
@@ -211,4 +211,4 @@ class TSP
   end
 end
 
-TSP.perform
+TravelingSalesmanProblemWithAG.perform
