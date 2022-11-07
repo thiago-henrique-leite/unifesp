@@ -1,5 +1,5 @@
 class TravelingSalesmanProblemWithACO
-  ITERATIONS = 100
+  ITERATIONS = 5
   MATRIX_DIMENSION = 8
   ALPHA = 1
   BETA = 1
