@@ -68,6 +68,8 @@ class TravelingSalesmanProblemWithACO
     print_path(bestest_path[0], bestest_path[1])
   end
 
+  private
+
   def build_pheromone_matrix_and_edge_quality
     MATRIX_DIMENSION.times do |i|
       pheromone_matrix[i] = []
